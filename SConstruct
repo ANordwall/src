@@ -15,8 +15,9 @@ list = Builder(action = 'xc16-objdump -S -D $SOURCE > $TARGET',
                src_suffix = 'elf')
 env.Append(BUILDERS = {'List' : list})
 
-env.Program('coin', ['coin.c', 
-                      '../lib/elecanisms.c']) 
-env.Hex('coin')
-env.List('coin')
+env.Program('game', ['game.c', 
+                      '../lib/elecanisms.c',
+                      '../lib/millis.c']) 
+env.Hex('game')
+env.List('game')
 
